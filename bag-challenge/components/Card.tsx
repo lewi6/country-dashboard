@@ -19,11 +19,13 @@ export default function ImgMediaCard(props: any) {
     console.log(id)
   }
 
-
+  var colo:"default" | "success" = "default"
+  if (country.visited)
+    colo = "success"
 
 
   return (
-    <Card sx={{ maxWidth: 250 }}>
+    <Card sx={{ maxWidth: 270 }}>
       <Link href="/jj" >
         <a>
           <CardMedia
@@ -51,7 +53,7 @@ export default function ImgMediaCard(props: any) {
       </Link>
 
       <CardActions style={{ backgroundColor: "#F8F8F8" }}>
-        <IconButton size="small" style={{ backgroundColor: `${country.visited && `success` } ` }}>
+        <IconButton size="small" color={colo}>
           <CheckCircleIcon />
         </IconButton>
         <IconButton onClick={deleteCountry} size="small"  >
